@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-Ev-EbT">
+                                <rect key="frame" x="248" y="28" width="105" height="30"/>
+                                <state key="normal" title="Get some data!"/>
+                                <connections>
+                                    <action selector="staticRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GW8-7N-Egq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KT-6b-Mmm">
+                                <rect key="frame" x="220" y="95" width="160" height="30"/>
+                                <state key="normal" title="Start Dynamic Callback"/>
+                                <connections>
+                                    <action selector="dynamicStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvJ-lK-PoN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0f-1X-U8e">
+                                <rect key="frame" x="217" y="162" width="166" height="30"/>
+                                <state key="normal" title="Stop Dynamic Callbacks"/>
+                                <connections>
+                                    <action selector="dynamicStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2K-Zs-SyI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Static Data" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDJ-3b-3n3">
+                                <rect key="frame" x="257.5" y="66" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic Data" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjD-uF-xAQ">
+                                <rect key="frame" x="246.5" y="133" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="dJs-k1-dgv">
+                                <rect key="frame" x="200" y="392" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="SFO-qB-tf8"/>
+                                    <constraint firstAttribute="width" constant="200" id="aX1-K5-fbp"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hDJ-3b-3n3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Ch-le-7kD"/>
+                            <constraint firstItem="tjD-uF-xAQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hd-1F-Cgf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dJs-k1-dgv" secondAttribute="bottom" constant="8" symbolic="YES" id="CcR-by-3Mh"/>
+                            <constraint firstItem="tjD-uF-xAQ" firstAttribute="top" secondItem="8KT-6b-Mmm" secondAttribute="bottom" constant="8" symbolic="YES" id="L5L-NZ-rUV"/>
+                            <constraint firstItem="8KT-6b-Mmm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QJh-fR-rqH"/>
+                            <constraint firstItem="d0f-1X-U8e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tnp-u7-tpY"/>
+                            <constraint firstItem="8KT-6b-Mmm" firstAttribute="top" secondItem="hDJ-3b-3n3" secondAttribute="bottom" constant="8" symbolic="YES" id="efe-bX-QP8"/>
+                            <constraint firstItem="1cA-Ev-EbT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="gkG-aE-lOu"/>
+                            <constraint firstItem="1cA-Ev-EbT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iPw-RR-4km"/>
+                            <constraint firstItem="dJs-k1-dgv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j85-89-VKh"/>
+                            <constraint firstItem="d0f-1X-U8e" firstAttribute="top" secondItem="tjD-uF-xAQ" secondAttribute="bottom" constant="8" symbolic="YES" id="jVu-es-zmL"/>
+                            <constraint firstItem="hDJ-3b-3n3" firstAttribute="top" secondItem="1cA-Ev-EbT" secondAttribute="bottom" constant="8" symbolic="YES" id="naz-3r-Xb6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dynamicLabel" destination="tjD-uF-xAQ" id="r04-m8-ytb"/>
+                        <outlet property="dynamicStartButton" destination="8KT-6b-Mmm" id="KbV-ni-4Z2"/>
+                        <outlet property="dynamicStopButton" destination="d0f-1X-U8e" id="iK8-ly-25B"/>
+                        <outlet property="imageView" destination="dJs-k1-dgv" id="TE0-P7-XrA"/>
+                        <outlet property="staticButton" destination="1cA-Ev-EbT" id="RXZ-XN-cb4"/>
+                        <outlet property="staticLabel" destination="hDJ-3b-3n3" id="Jal-ul-RoI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="387" y="312"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dog" width="600" height="412"/>
+    </resources>
 </document>
